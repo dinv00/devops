@@ -96,6 +96,7 @@ jobs:
       - name: Run test
         run: |
           npm run test -- --colors
+
   Deploy:
     needs: [Build, Test]
     if: ${{ github.ref == 'refs/heads/main' }}
