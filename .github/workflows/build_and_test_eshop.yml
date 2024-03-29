@@ -105,17 +105,17 @@ jobs:
     steps:
       - name: Code checkout
         uses: actions/checkout@v4.1.1
-          with:
-            token: ${{ secrets.WORKFLOW_TOKEN }}
+        with:
+          token: ${{ secrets.WORKFLOW_TOKEN }}
 
       - name: Load Node modules and build folder
         uses: actions/cache@v4.0.2
-          with:
-            path: |
-              ~/.npm
-              ./node_modules
-              ./build
-            key: ${{ runner.os }}-buils-${{ github.run_id }}
+        with:
+          path: |
+            ~/.npm
+            ./node_modules
+            ./build
+          key: ${{ runner.os }}-buils-${{ github.run_id }}
 
       - name: Deploy to firebase
         uses: lowply/deploy-firebase@v0.0.5
